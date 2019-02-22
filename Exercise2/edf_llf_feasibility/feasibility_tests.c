@@ -18,7 +18,7 @@
 
 // U=0.7333
 U32_T ex0_period[] = {2, 10, 15};
-U32_T ex0_wcet[] = {1, 1, 2};
+U32_T ex0_wcet[] = {1, 7, 2};
 
 // U=0.9857
 U32_T ex1_period[] = {2, 5, 7};
@@ -43,6 +43,7 @@ U32_T ex5_wcet[] = {1, 2, 1};
 //U=0.996
 U32_T ex6_period[] = {2, 5, 7, 13};
 U32_T ex6_wcet[] = {1, 1, 1, 2};
+U32_T ex6_dam[] = {2,3,7,15};
 
 //U=1.0
 U32_T ex7_period[] = {3, 5, 15};
@@ -115,10 +116,10 @@ int main(void)
     else
         printf("INFEASIBLE\n");
 
-    printf("Ex-6 U=%4.2f (C1=1, C2=1, C3=1, C4=2; T1=2, T2=5, T3=7, T4=13; T=D): ",
+    printf("Ex-6 U=%4.2f (C1=1, C2=1, C3=1, C4=2; T1=2, T2=5, T3=7, T4=13; D1=2, D2=3, D3=7, D4=15): ",
 		   ((1.0/2.0) + (1.0/5.0) + (1.0/7.0) + (2.0/13.0)));
 	numServices = sizeof(ex6_period)/sizeof(U32_T);
-    if(edf_feasibility(numServices, ex6_period, ex6_wcet, ex6_period) == TRUE)
+    if(edf_feasibility(numServices, ex6_period, ex6_wcet, ex6_dam) == TRUE)
         printf("FEASIBLE\n");
     else
         printf("INFEASIBLE\n");
@@ -195,10 +196,10 @@ int main(void)
     else
         printf("INFEASIBLE\n");
 
-    printf("Ex-6 U=%4.2f (C1=1, C2=1, C3=1, C4=2; T1=2, T2=5, T3=7, T4=13; T=D): ",
+    printf("Ex-6 U=%4.2f (C1=1, C2=1, C3=1, C4=2; T1=2, T2=5, T3=7, T4=13; D1=2, D2=3, D3=7, D4=15): ",
 		   ((1.0/2.0) + (1.0/5.0) + (1.0/7.0) + (2.0/13.0)));
 	numServices = sizeof(ex6_period)/sizeof(U32_T);
-    if(llf_feasibility(numServices, ex6_period, ex6_wcet, ex6_period) == TRUE)
+    if(llf_feasibility(numServices, ex6_period, ex6_wcet, ex6_dam) == TRUE)
         printf("FEASIBLE\n");
     else
         printf("INFEASIBLE\n");
