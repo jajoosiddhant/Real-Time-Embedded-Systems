@@ -13,6 +13,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include <time.h>
 #include <pthread.h>
 #include <errno.h>
@@ -43,7 +44,6 @@ struct data_time
 
 int main()
 {
-	uint8_t i;
 	struct data_time data_time;				//Local Structure Object
 	srand(time(0));							//Initializing Seed Value
 		
@@ -137,6 +137,7 @@ void *update_data(void *threadp)
  */ 
 void *read_data(void *threadp)
 {
+	sleep(1);
 	struct data_time *data_time = (struct data_time *)threadp;
 	printf("\nReading Data.....\n");
 	pthread_mutex_lock(&mute);
