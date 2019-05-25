@@ -18,8 +18,8 @@ This project was completed in the course Real Time Embedded Systems at Universit
 - Thread Safety
 - OpenCv
 - Rate Monotonic Scheduling Policy
-- scheduler thread
-- mutexes/semaphores
+- Scheduler thread
+- Mutexes/Semaphores
 
 ## Features:
 - The Bot detects road sign and takes subsequent appropriate steps. This Bot detects only a single **YIELD** sign due to processor constraints.
